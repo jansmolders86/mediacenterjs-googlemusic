@@ -1,0 +1,42 @@
+extends /layout
+
+block declarations
+    - additional_title      = 'Google Music';
+    - body_class            = 'appMusic';
+    - use_angular           = true;
+    - angular_app           = "GoogleMusicApp";
+    - angular_body_ctrl     = "GoogleMusicCtrl";
+
+block additional_css
+    link(rel='stylesheet', href='/music/css/style.css')
+
+block additional_scripts
+    script(src="/core/js/plugins/angular/angular-ui/ui-bootstrap-tpls-0.11.0.js")
+    script(src="/music/js/app.js")
+    script(src="/music/js/remote.js")
+    script(src="/core/js/plugins/jquery/jquery.slimscroll.min.js")
+    script.
+         $(function(){
+             var isTouch = "ontouchstart" in document.documentElement;
+             if(!isTouch){
+                 $('#inner-playlist').slimScroll({
+                     height: '100%',
+                     wheelStep: 30,
+                     scrollBy : '80px'
+                 });
+             }
+
+             $('.trackview:first').css('paddingTop', '100px');
+         });
+block body
+    header(ng-init="playlist.Visible = true", ng-class="{side: player.playlist.length > 0 && playlist.Visible}")
+        h1.pull-left#show-playlist(ng-hide="playlist.Visible")
+            i.right.angle.icon.pull-left(ng-click="playlist.Visible = true")
+        .container
+            .row
+                .col-md-12
+                    a.backlink(href="/") &#xe113;
+                    h1.hidden-xs Google Music
+                    input#search.pull-right(ng-model="query", type="text", placeholder="Search", ng-show="albums")
+
+    .container-fluid
