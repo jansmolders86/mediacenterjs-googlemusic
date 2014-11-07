@@ -45,5 +45,13 @@ exports.get = function(req, res, next){
     if (infoRequest == 'load'){
         functions.loadItems(req,res);
     }
+
+    if (infoRequest == 'loadTracks'){
+        functions.getTracks(req,res, optionalParam);
+    }
+
+    if (infoRequest == 'play'){
+        functions.play(req,res, optionalParam);
+    }
 }
 

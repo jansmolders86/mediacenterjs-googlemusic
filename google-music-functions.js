@@ -15,6 +15,7 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
+
 var fs = require('fs.extra')
 , config = require('../../lib/handlers/configuration-handler').getConfiguration()
 , PlayMusic = require('playmusic')
@@ -26,5 +27,21 @@ exports.loadItems = function (req, res) {
             var completeLibrary = library.data.items;
             res.json(completeLibrary);
         });
+    });
+}
+
+exports.getTracks = function (req,res, albumId){
+    pm.getAlbumEntries(albumId, function(data){
+        res.json(data);
+    }, function(error){
+        console.log(error);
+    });
+}
+
+
+exports.play = function (req,res, songId){
+    console.log('streaming song',songId )
+    pm.getStreamUrl(songId, function(streamUrl) {
+        res.json(streamUrl);
     });
 }

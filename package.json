@@ -16,6 +16,6 @@
 	],
 	"dependencies": {
 		"crypto-js": ">= 3.1",
-		"playmusic":">= 0.2.0"
+		"playmusic":"denysvitali/playmusic"
 	}
 }

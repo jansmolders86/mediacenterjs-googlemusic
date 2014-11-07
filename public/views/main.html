@@ -1,21 +1,29 @@
-<header class="jumbotron">
-  <h1>'Allo, 'Allo!</h1>
-  <p class="lead">
-    <img src="images/yeoman.png" alt="I'm Yeoman"><br>
-    Here is your sweet-ass audio player: <br>
-    <audio-player></audio-player>
-  </p>
+<header>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <a class="backlink" href="/">&#xe113;</a>
+                <h1 class="hidden-xs">Google Music</h1>
+                <input id="search" class="pull-right" ng-model="query" type="text"  placeholder="Search">
+            </div>
+        </div>
+    </div>
 </header>
 
-<ul class="albums">
-  <li
-    ng-repeat="item in data | startFrom:currentTrack | limitTo:pageSize"
-    ng-style="{'background-image':'url({{item.image}})'}"
-    title="{{item.artist.name}} - {{item.title}}"
-    data-file="{{item.file}}"
-  ></li>
-</ul>
 
-<footer class="footer">
-  <p>&hearts; from your super-bud <a href="https://github.com/konsumer">konsumer</a></p>
-</footer>
+<section id="library">
+    <div class="col-md-2" ng-repeat="(key, value) in albums | groupBy: 'album'">
+        <a href="/googlemusic/#/tracks/{{value[0].albumId}}">
+            <div class="thumbnail">
+                <img src="{{value[0].albumArtRef[0].url}}" class="img-responsive" >
+                <div class="caption">
+                    <p>
+                        <span class="album-title"> {{value[0].album}}</span>
+                        <span class="album-artist"> {{value[0].artist}}</span>
+                        <span class="album-year"> {{value[0].year}}</span>
+                    </p>
+                </div>
+            </div>
+        </a>
+    </div>
+</section>

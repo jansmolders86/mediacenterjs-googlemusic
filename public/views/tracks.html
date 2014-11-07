@@ -1,0 +1,36 @@
+<header>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <a class="backlink" href="/googlemusic">&#xe113;</a>
+                <h1 class="hidden-xs">Google Music</h1>
+                <input id="search" class="pull-right" ng-model="query" type="text"  placeholder="Search">
+            </div>
+        </div>
+    </div>
+</header>
+
+<section id="tracklist">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <img src="{{tracks[0].albumArtRef[0].url}}" class="img-responsive" >
+            </div>
+            <div class="col-md-9 track-info">
+                <div class="track-caption">
+                    <span class="album-title"> {{tracks[0].album}}</span>
+                    <span class="album-artist"> {{tracks[0].artist}}</span>
+                    <span class="album-year"> {{tracks[0].year}}</span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <ol>
+                    <li class="track" ng-click="playSong(track.nid)"  ng-repeat="track in tracks | orderBy:'trackNumber'">
+                        <span class="track-number">{{track.trackNumber}}</span> {{track.title}}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
