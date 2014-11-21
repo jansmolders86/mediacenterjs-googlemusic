@@ -1,0 +1,14 @@
+﻿[
+    {
+        "name": "googleUser",
+        "label": "Google Username",
+        "type": "text",
+        "placeholder": "Google mail"
+    },
+    {
+        "name": "googlePass",
+        "label": "Google password",
+        "type": "password",
+        "placeholder": "Google password"
+    }
+]
