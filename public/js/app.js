@@ -36,7 +36,7 @@ function($routeProvider) {
 }]);
 
 musicApp.controller('GoogleMusicCtrl', function($scope, $http, $filter) {
-        $http.get('/googlemusic/load').success(function(data) {
+        $http.get('/mediacenterjs-googlemusic/load').success(function(data) {
             $scope.albums =  data;
         });
 
@@ -95,11 +95,11 @@ musicApp.factory('audio', function($document) {
 musicApp.controller('GoogleMusicTrackCtrl', function($scope, $http, $filter, $routeParams, audio) {
     var albumId = $routeParams.albumId;
 
-    $http.get('/googlemusic/loadTracks/'+albumId).success(function(data) {
+    $http.get('/mediacenterjs-googlemusic/loadTracks/'+albumId).success(function(data) {
             $scope.tracks =  data;
 
             $scope.playSong = function(songId){
-                $http.get('/googlemusic/play/'+songId).success(function(data) {
+                $http.get('/mediacenterjs-googlemusic/play/'+songId).success(function(data) {
                     audio.src = data;
                     audio.play();
                 });
