@@ -13,7 +13,7 @@
 
 <section id="library">
     <div class="col-md-2" ng-repeat="(key, value) in albums | groupBy: 'album'">
-        <a href="/googlemusic/#/tracks/{{value[0].albumId}}">
+        <a href="/mediacenterjs-googlemusic/#/tracks/{{value[0].albumId}}">
             <div class="thumbnail">
                 <img src="{{value[0].albumArtRef[0].url}}" class="img-responsive" >
                 <div class="caption">

@@ -1,21 +1,28 @@
 {
-	"name": "mediacenterjs-googlemusic",
-	"description": "WIP: A Google Music app for mediacenterjs",
-	"homepage": "http://www.mediacenterjs.com",
-	"author": {
-		"name": "Jan Smolders",
-		"email": "jansmolders86@gmail.com"
-	},
-	"version": "0.0.9",
-	"peerDependencies": {
-		"mediacenterjs": "*"
-	},
-	"keywords": [
-		"mediacenterjs",
-		"Google Music"
-	],
-	"dependencies": {
-		"crypto-js": ">= 3.1",
-		"playmusic":"denysvitali/playmusic"
-	}
+  "name": "mediacenterjs-googlemusic",
+  "description": "WIP: A Google Music app for mediacenterjs",
+  "homepage": "http://www.mediacenterjs.com",
+  "author": {
+    "name": "Jan Smolders",
+    "email": "jansmolders86@gmail.com"
+  },
+  "version": "0.0.10",
+  "peerDependencies": {
+    "mediacenterjs": "*"
+  },
+  "keywords": [
+    "mediacenterjs",
+    "Google Music"
+  ],
+  "dependencies": {
+    "crypto-js": ">= 3.1",
+    "playmusic": "git+https://github.com/denysvitali/playmusic"
+  },
+  "readme": "A google Music plugin for mediacenterJS\r\n\r\nWIP!",
+  "readmeFilename": "README.md",
+  "gitHead": "228475675e3f4bec1e99563e26f4ec6ffb1a4cea",
+  "_id": "mediacenterjs-googlemusic@0.0.9",
+  "scripts": {},
+  "_shasum": "d53b622645063542af804da11bf794e28bd789ef",
+  "_from": "mediacenterjs-googlemusic@"
 }

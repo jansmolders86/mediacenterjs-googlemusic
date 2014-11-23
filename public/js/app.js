@@ -23,11 +23,11 @@ musicApp.config(['$routeProvider',
 function($routeProvider) {
     $routeProvider.
     when('/', {
-        templateUrl: 'views/main.html',
+        templateUrl: '/mediacenterjs-googlemusic/public/views/main.html',
         controller: 'GoogleMusicCtrl'
     }).
     when('/tracks/:albumId', {
-        templateUrl: 'views/tracks.html',
+        templateUrl: '/mediacenterjs-googlemusic/public/views/tracks.html',
         controller: 'GoogleMusicTrackCtrl'
     }).
     otherwise({
