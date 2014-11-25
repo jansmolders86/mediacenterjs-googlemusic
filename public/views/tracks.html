@@ -27,7 +27,7 @@
         <div class="row">
             <div class="col-md-12">
                 <ol>
-                    <li class="track" ng-click="playSong(track.nid)"  ng-repeat="track in tracks | orderBy:'trackNumber'">
+                    <li class="track" ng-click="playSong(track.albumArtist, track.title)"  ng-repeat="track in tracks | orderBy:'trackNumber'">
                         <span class="track-number">{{track.trackNumber}}</span> {{track.title}}</li>
                 </ul>
             </div>

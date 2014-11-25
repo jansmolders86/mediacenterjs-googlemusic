@@ -34,14 +34,23 @@ exports.getTracks = function (req,res, albumId){
     pm.getAlbumEntries(albumId, function(data){
         res.json(data);
     }, function(error){
-        console.log(error);
+        console.log('error', error);
     });
 }
 
 
 exports.play = function (req,res, songId){
-    console.log('streaming song',songId )
-    pm.getStreamUrl(songId, function(streamUrl) {
-        res.json(streamUrl);
+	console.log('song', songId)
+	pm.search(songId, 5, function(data) { // max 5 results
+	console.log('data', data)
+			var song = data.entries.sort(function(a, b) { // sort by match score
+					return a.score < b.score;
+			}).shift(); // take first song
+			console.log('Song found',song);
+			pm.getStreamUrl(song.track.nid, function(streamUrl) {
+				console.log('Stream URL',streamUrl);
+			});
+    }, function(message, body, err, httpResponse) {
+        console.log('Message',message);
     });
 }

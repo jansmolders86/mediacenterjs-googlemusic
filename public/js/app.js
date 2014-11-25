@@ -98,8 +98,8 @@ musicApp.controller('GoogleMusicTrackCtrl', function($scope, $http, $filter, $ro
     $http.get('/mediacenterjs-googlemusic/loadTracks/'+albumId).success(function(data) {
             $scope.tracks =  data;
 
-            $scope.playSong = function(songId){
-                $http.get('/mediacenterjs-googlemusic/play/'+songId).success(function(data) {
+            $scope.playSong = function(album, title){
+                $http.get('/mediacenterjs-googlemusic/play/'+album+' '+title).success(function(data) {
                     audio.src = data;
                     audio.play();
                 });
