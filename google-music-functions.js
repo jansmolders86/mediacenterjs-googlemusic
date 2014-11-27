@@ -31,7 +31,7 @@ exports.loadItems = function (req, res) {
 }
 
 exports.getTracks = function (req,res, albumId){
-    pm.getAlbumEntries(albumId, function(data){
+    pm.getAlbum(albumId, true, function(data){
         res.json(data);
     }, function(error){
         console.log('error', error);
