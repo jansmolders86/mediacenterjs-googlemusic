@@ -6,7 +6,7 @@
     "name": "Jan Smolders",
     "email": "jansmolders86@gmail.com"
   },
-  "version": "0.0.12",
+  "version": "0.0.13",
   "peerDependencies": {
     "mediacenterjs": "*"
   },
@@ -16,7 +16,7 @@
   ],
   "dependencies": {
     "crypto-js": ">= 3.1",
-    "playmusic": "playmusic"
+    "playmusic": ">= 1.1.1"
   },
   "readme": "A google Music plugin for mediacenterJS\r\n\r\nWIP!",
   "readmeFilename": "README.md",
